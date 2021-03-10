@@ -1,0 +1,107 @@
+﻿@model AnnonssystemMVC.Models.MultipleModels
+
+<h2>Är du prenumerant?</h2>
+<br />
+<input type="radio" id="yes" value="yes" name="yesorno">
+<label for="yes" class="light">Ja</label>
+<br />
+<input type="radio" id="no" value="no" name="yesorno">
+<label for="no" class="light">Nej</label>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#yes").click(function () {
+            $("#yesBox").css("visibility", "visible");
+            $("#noBox").css("visibility", "hidden");
+        });
+        $("#no").click(function () {
+            $("#yesBox").css("visibility", "hidden");
+            $("#noBox").css("visibility", "visible");
+        });
+    });
+</script>
+
+<div class="container" id="yesBox" style="visibility:hidden">
+    <div class="col-md-4">
+        <form asp-action="ReadPrenumerant">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Prenumerationsnummer</label>
+                <input asp-for="prenumerant.Pr_Id" class="form-control" name="prenumerantId" />
+                <span asp-validation-for="prenumerant.Pr_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ok" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container" id="noBox" style="visibility:hidden">
+    <div class="col-md-4">
+        <form asp-action="CreateAnnonsor">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Företagsnamn</label>
+                <input asp-for="annonsor.An_Foretagsnamn" class="form-control" />
+                <span asp-validation-for="annonsor.An_Foretagsnamn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Organisationsnummer</label>
+                <input asp-for="annonsor.An_Organisationsnummer" class="form-control" />
+                <span asp-validation-for="annonsor.An_Organisationsnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Epost</label>
+                <input asp-for="annonsor.An_Epost" class="form-control" />
+                <span asp-validation-for="annonsor.An_Epost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Mobil</label>
+                <input asp-for="annonsor.An_Mobil" class="form-control" />
+                <span asp-validation-for="annonsor.An_Mobil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Utdelningsadress</label>
+                <input asp-for="annonsor.An_Utdelningsadress" class="form-control" />
+                <span asp-validation-for="annonsor.An_Utdelningsadress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Postnummer</label>
+                <input asp-for="annonsor.An_UPostnummer" class="form-control" />
+                <span asp-validation-for="annonsor.An_UPostnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Ort</label>
+                <input asp-for="annonsor.An_UOrt" class="form-control" />
+                <span asp-validation-for="annonsor.An_UOrt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Fakturaadress</label>
+                <input asp-for="annonsor.An_Fakturaadress" class="form-control" />
+                <span asp-validation-for="annonsor.An_Fakturaadress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Postnummer</label>
+                <input asp-for="annonsor.An_FPostnummer" class="form-control" />
+                <span asp-validation-for="annonsor.An_FPostnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Ort</label>
+                <input asp-for="annonsor.An_FOrt" class="form-control" />
+                <span asp-validation-for="annonsor.An_FOrt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Skapa ny annonsör" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="VerifyAnnonsor" class="btn btn-dark">Tillbaka</a>
+</div>
+
+
+

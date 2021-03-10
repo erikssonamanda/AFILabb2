@@ -1,0 +1,57 @@
+﻿@model AnnonssystemMVC.Models.Ads
+
+@{
+    ViewData["Title"] = "Ändra annons";
+}
+
+<h2>Ändra annons</h2>
+
+@using (Html.BeginForm("UpdateAdConfirm", "Home", FormMethod.Post))
+{
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Id
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Ad_Id, new { @readonly = "readonly", style = "background-color:#d9d9d9" })
+            </dd>
+            <dt>
+                Annonsör
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Ad_Annonsor, new { @readonly = "readonly", style = "background-color:#d9d9d9" })
+            </dd>
+            <dt>
+                Rubrik
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Ad_Rubrik, new { style = "width:400px;" })
+            </dd>
+            <dt>
+                Annonspris
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Ad_AnnonsPris, new { @readonly = "readonly", style = "background-color:#d9d9d9" })
+            </dd>
+            <dt>
+                Pris
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Ad_VaransPris)
+            </dd>
+            <dt>
+                Innehåll
+            </dt>
+            <dd>
+                @Html.TextAreaFor(model => model.Ad_Innehall, new { style = "width:400px; height:250px;" })
+            </dd>
+        </dl>
+    </div>
+    <input type="submit" value="Bekräfta ändringar" class="btn btn-dark">
+}
+<br />
+<div>
+    <a asp-action="ReadAllaAds" class="btn btn-dark">Tillbaka</a>
+</div>

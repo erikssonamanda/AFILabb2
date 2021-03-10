@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AnnonssystemMVC.Models.Ads>
+
+@{
+    ViewData["Title"] = "Alla Annonser";
+}
+
+<h2>Alla Annonser</h2>
+<br />
+
+<input type="button" class="btn btn-dark" value="Lägg till annons" onclick="@("window.location.href='" + @Url.Action("VerifyAnnonsor", "Home") + "'");" />
+
+<br />
+<br/> 
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Annonsör 
+            </th>
+            <th>
+                Rubrik
+            </th>
+            <th>
+                Innehåll
+            </th>
+            <th>
+                Varans pris
+            </th>
+            <th>
+                Annonspris
+            </th>
+            <th>Övrigt</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad_Annonsor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad_Rubrik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad_Innehall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad_VaransPris)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad_AnnonsPris)
+            </td>
+            <td>
+                @Html.ActionLink("Visa Annons", "ReadAd", new { id = item.Ad_Id })<br />
+                @Html.ActionLink("Visa Annonsör", "ReadAnnonsorDetalj", new { id = item.Ad_Annonsor })<br />
+                @Html.ActionLink("Ändra Annons", "UpdateAd", new { id = item.Ad_Id })<br />
+                @Html.ActionLink("Radera Annons", "DeleteAd", new { id = item.Ad_Id })<br />
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

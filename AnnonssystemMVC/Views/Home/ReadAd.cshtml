@@ -1,0 +1,53 @@
+﻿@model AnnonssystemMVC.Models.Ads
+
+@{
+    ViewData["Title"] = "Visa Annons";
+}
+
+<h2>Annons: @Html.DisplayFor(model => model.Ad_Id)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ad_Id)
+        </dd>
+        <dt>
+            Annonsör
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ad_Annonsor)
+        </dd>
+        <dt>
+            Rubrik
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ad_Rubrik)
+        </dd>
+        <dt>
+            Innehåll
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ad_Innehall)
+        </dd>
+        <dt>
+            Varans Pris
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ad_VaransPris)
+        </dd>
+        <dt>
+            Annonspris
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ad_AnnonsPris)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="ReadAllaAds" class="btn btn-dark">Tillbaka</a>
+</div>

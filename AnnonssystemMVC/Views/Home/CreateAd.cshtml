@@ -1,0 +1,129 @@
+﻿@model Tuple<Annonsorer, Ads>
+
+<h2>Skapa en ny annons</h2>
+
+@{
+    var fornamn = Html.DisplayFor(tuple => tuple.Item1.An_Fornamn);
+}
+
+<div class="container" id="test" style="visibility:visible"
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Förnamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Fornamn)
+        </dd>
+        <dt>
+            Efternamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Efternamn)
+        </dd>
+        <dt>
+            Företagsnamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Foretagsnamn)
+        </dd>
+        <dt>
+            Organisationsnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Organisationsnummer)
+        </dd>
+        <dt>
+            Epost
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Epost)
+        </dd>
+        <dt>
+            Mobil
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Mobil)
+        </dd>
+        <dt>
+            Utdelningsadress
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Utdelningsadress)
+        </dd>
+        <dt>
+            Postnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_UPostnummer)
+        </dd>
+        <dt>
+            Ort
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_UOrt)
+        </dd>
+        <dt>
+            Fakturaadress
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Fakturaadress)
+        </dd>
+        <dt>
+            Postnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_FPostnummer)
+        </dd>
+        <dt>
+            Ort
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_FOrt)
+        </dd>
+        <dt>
+            Personnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(tuple => tuple.Item1.An_Personnummer)
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="CreateAdConfirmed">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label class="control-label">Rubrik</label>
+        <input asp-for="Item2.Ad_Rubrik" class="form-control" style="width:400px;" name="rubrik" />
+        <span asp-validation-for="Item2.Ad_Rubrik" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Annonsör</label>
+        <input asp-for="Item1.An_Id" class="form-control" style="width:400px;" name="annonsor" readonly/>
+        <span asp-validation-for="Item1.An_Id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Annonspris</label>
+        <input asp-for="Item1.An_AnnonsPris" class="form-control" style="width:400px;" name="annonspris" readonly/>
+        <span asp-validation-for="Item1.An_AnnonsPris" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Pris</label>
+        <input asp-for="Item2.Ad_VaransPris" class="form-control" style="width:400px;" name="pris" />
+        <span asp-validation-for="Item2.Ad_VaransPris" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Innehåll</label>
+        <textarea asp-for="Item2.Ad_Innehall" class="form-control" rows="5" style="width:400px" name="innehall"></textarea>
+        <span asp-validation-for="Item2.Ad_Innehall" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Skapa ny annons" class="btn btn-dark" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="ReadAnnonsor" class="btn btn-dark">Tillbaka</a>
+</div>

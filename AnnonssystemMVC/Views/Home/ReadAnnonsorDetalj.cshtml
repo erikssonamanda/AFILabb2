@@ -1,0 +1,90 @@
+﻿@model AnnonssystemMVC.Models.Annonsorer
+
+<h2>Information om annonsör: @Html.DisplayFor(model => model.An_Id)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Förnamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Fornamn)
+        </dd>
+        <dt>
+            Efternamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Efternamn)
+        </dd>
+        <dt>
+            Företagsnamn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Foretagsnamn)
+        </dd>
+        <dt>
+            Organisationsnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Organisationsnummer)
+        </dd>
+        <dt>
+            Epost
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Epost)
+        </dd>
+        <dt>
+            Mobil
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Mobil)
+        </dd>
+        <dt>
+            Utdelningsadress
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Utdelningsadress)
+        </dd>
+        <dt>
+            Postnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_UPostnummer)
+        </dd>
+        <dt>
+            Ort
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_UOrt)
+        </dd>
+        <dt>
+            Fakturaadress
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Fakturaadress)
+        </dd>
+        <dt>
+            Postnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_FPostnummer)
+        </dd>
+        <dt>
+            Ort
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_FOrt)
+        </dd>
+        <dt>
+            Personnummer
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.An_Personnummer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="ReadAllaAds" class="btn btn-dark">Tillbaka</a>
+</div>

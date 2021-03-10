@@ -1,0 +1,19 @@
+﻿@model AnnonssystemMVC.Models.Annonsorer
+
+<h2>Annonsör</h2>
+<br />
+<label style="font-size:24px">Skriv in ditt annonsör-id:</label>
+<form asp-action="CreateAd">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="An_Id" class="form-control" name="annonsorId" style="width:250px" />
+        <span asp-validation-for="An_Id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Ok" class="btn btn-dark" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="ReadAllaAds" class="btn btn-dark">Tillbaka till annonserna</a>
+</div>

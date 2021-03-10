@@ -1,0 +1,75 @@
+﻿@model AnnonssystemMVC.Models.Prenumeranter
+
+@{
+    ViewData["Title"] = "Visa Prenumerant";
+}
+
+<h2>Information om prenumerant: @Html.DisplayFor(model => model.Pr_Id)</h2>
+
+@using (Html.BeginForm("CreateAnnonsorPrenumerant", "Home", FormMethod.Post))
+{
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Id
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Pr_Id, new { @readonly = "readonly", style = "background-color:#d9d9d9" })
+            </dd>
+            <dt>
+                Förnamn
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Pr_Fornamn)
+            </dd>
+            <dt>
+                Efternamn
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Pr_Efternamn)
+            </dd>
+            <dt>
+                Utdelningsadress
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Pr_Utdelningsadress)
+            </dd>
+            <dt>
+                Postnummer
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Pr_Postnummer)
+            </dd>
+            <dt>
+                Ort
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Pr_Ort)
+            </dd>
+            <dt>
+                Epost
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Pr_Epost)
+            </dd>
+            <dt>
+                Mobil
+            </dt>
+            <dd>
+                @Html.EditorFor(model => model.Pr_Mobil)
+            </dd>
+            <dt>
+                Personnummer
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Pr_Personnummer, new { @readonly = "readonly", style = "background-color:#d9d9d9" })
+            </dd>
+        </dl>
+    </div>
+    <input type="submit" value="Bekräfta användaruppgifter" class="btn btn-dark">
+}
+<br />
+<div>
+    <a asp-action="VerifyPrenumerant" class="btn btn-dark">Tillbaka</a>
+</div>
